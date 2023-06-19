@@ -41,7 +41,11 @@
             />
           </div>
 
-          <button (click)="agregarEditar()" class="btn btn-primary" style="margin-right: 15px;">
+          <button
+            (click)="agregarEditar()"
+            class="btn btn-primary"
+            style="margin-right: 15px"
+          >
             Guardar
           </button>
 
@@ -62,7 +66,9 @@
           (click)="abrir(empleado)"
           [class.active]="empleado == empleadoSeleccionado"
         >
-          <span class="badge badge-primary" style="color: blue;">{{ empleado.id }}</span>
+          <span class="badge badge-primary" style="color: blue">{{
+            empleado.id
+          }}</span>
           {{ empleado.nombre }} - {{ empleado.brm }} - {{ empleado.puesto }}
         </li>
       </ul>

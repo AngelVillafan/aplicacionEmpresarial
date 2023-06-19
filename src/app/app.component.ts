@@ -32,9 +32,7 @@ export class AppComponent {
       puesto: 'Desarrollador FullStack',
     },
   ];
-
   empleadoSeleccionado: Empleado = new Empleado();
-
   abrir(empleado: Empleado) {
     this.empleadoSeleccionado = empleado;
   }
