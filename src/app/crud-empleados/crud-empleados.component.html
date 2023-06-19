@@ -1,0 +1,77 @@
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mt-4">
+        <div class="card mt-4">
+          <div class="card-body">
+            <div class="card-title">Inserta un nuevo empleado</div>
+            <div class="form-group mb-4">
+              <input
+                type="text"
+                [(ngModel)]="empleadoSeleccionado.nombre"
+                class="form-control"
+                name=""
+                placeholder="Ingresa el nombre"
+                id=""
+              />
+            </div>
+  
+            <div class="form-group mb-4">
+              <input
+                type="text"
+                [(ngModel)]="empleadoSeleccionado.brm"
+                class="form-control"
+                name=""
+                placeholder="Ingresa el BRM"
+                id=""
+              />
+            </div>
+  
+            <div class="form-group mb-4">
+              <input
+                type="text"
+                [(ngModel)]="empleadoSeleccionado.puesto"
+                class="form-control"
+                name=""
+                placeholder="Ingresa el puesto"
+                id=""
+              />
+            </div>
+  
+            <button
+              (click)="agregarEditar()"
+              class="btn btn-primary"
+              style="margin-right: 15px"
+            >
+              Guardar
+            </button>
+  
+            <button
+              class="btn btn-danger"
+              *ngIf="empleadoSeleccionado.id !== 0"
+              (click)="eliminar()"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+  
+        <ul class="list-group mt-4">
+          <li
+            *ngFor="let empleado of arregloEmpleados"
+            class="list-group-item list-group-item-action"
+            (click)="abrir(empleado)"
+            [class.active]="empleado == empleadoSeleccionado"
+          >
+            <span class="badge badge-primary" style="color: blue">{{
+              empleado.id
+            }}</span>
+            {{ empleado.nombre }} - {{ empleado.brm }} - {{ empleado.puesto }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+  
